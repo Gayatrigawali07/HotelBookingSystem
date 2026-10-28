@@ -1,0 +1,10 @@
+@model Room
+@{ ViewData["Title"] = "Add Room"; }
+<section class="page-banner"><div class="container"><span class="eyebrow">ADMIN</span><h1>Add a room</h1></div></section>
+<section class="container section-space"><div class="row justify-content-center"><div class="col-lg-8"><div class="form-card">
+    <form asp-action="Create" method="post">
+        <partial name="_RoomForm" model="Model" />
+        <div class="d-flex gap-2 mt-4"><button class="btn btn-brand">Save room</button><a class="btn btn-outline-brand" asp-action="Index">Cancel</a></div>
+    </form>
+</div></div></div></section>
+@section Scripts { <partial name="_ValidationScriptsPartial" /> }

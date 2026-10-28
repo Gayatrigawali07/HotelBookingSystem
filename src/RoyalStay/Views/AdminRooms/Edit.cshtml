@@ -1,0 +1,11 @@
+@model Room
+@{ ViewData["Title"] = "Edit Room"; }
+<section class="page-banner"><div class="container"><span class="eyebrow">ADMIN</span><h1>Edit room @Model.RoomNumber</h1></div></section>
+<section class="container section-space"><div class="row justify-content-center"><div class="col-lg-8"><div class="form-card">
+    <form asp-action="Edit" asp-route-id="@Model.RoomId" method="post">
+        <input type="hidden" asp-for="RoomId" />
+        <partial name="_RoomForm" model="Model" />
+        <div class="d-flex gap-2 mt-4"><button class="btn btn-brand">Save changes</button><a class="btn btn-outline-brand" asp-action="Index">Cancel</a></div>
+    </form>
+</div></div></div></section>
+@section Scripts { <partial name="_ValidationScriptsPartial" /> }

@@ -1,0 +1,22 @@
+@model Room
+@{
+    ViewData["Title"] = "Delete Room";
+    int count = (int)(ViewBag.BookingCount ?? 0);
+}
+<section class="page-banner"><div class="container"><span class="eyebrow">ADMIN</span><h1>Delete room @Model.RoomNumber?</h1></div></section>
+<section class="container section-space"><div class="row justify-content-center"><div class="col-lg-6"><div class="form-card">
+    <p><strong>@Model.RoomType</strong> · ₹@Model.Price.ToString("N0") / night</p>
+    @if (count > 0)
+    {
+        <div class="alert alert-warning">This room has <strong>@count</strong> booking(s), so it cannot be deleted. Edit the room and untick <em>Available for booking</em> to hide it from guests instead.</div>
+        <a class="btn btn-outline-brand" asp-action="Index">Back</a>
+        <a class="btn btn-brand" asp-action="Edit" asp-route-id="@Model.RoomId">Edit room</a>
+    }
+    else
+    {
+        <p class="text-muted">This cannot be undone.</p>
+        <form asp-action="Delete" asp-route-id="@Model.RoomId" method="post">
+            <button class="btn btn-danger">Yes, delete</button> <a class="btn btn-outline-brand" asp-action="Index">Cancel</a>
+        </form>
+    }
+</div></div></div></section>

@@ -1,0 +1,14 @@
+@model BookingRepository.DashboardStats
+@{ ViewData["Title"] = "Admin Dashboard"; }
+<section class="page-banner"><div class="container"><span class="eyebrow">ADMIN</span><h1>Dashboard</h1><p>A quick look at rooms and bookings.</p></div></section>
+<section class="container section-space">
+    <div class="row g-4">
+        <div class="col-6 col-lg-3"><div class="booking-summary text-center"><h3>@Model.Rooms</h3><p class="room-meta mb-0">Rooms (@Model.AvailableRooms available)</p></div></div>
+        <div class="col-6 col-lg-3"><div class="booking-summary text-center"><h3>@Model.Bookings</h3><p class="room-meta mb-0">Total bookings</p></div></div>
+        <div class="col-6 col-lg-3"><div class="booking-summary text-center"><h3>@Model.Pending</h3><p class="room-meta mb-0">Pending</p></div></div>
+        <div class="col-6 col-lg-3"><div class="booking-summary text-center"><h3>@Model.Confirmed</h3><p class="room-meta mb-0">Confirmed</p></div></div>
+        <div class="col-6 col-lg-3"><div class="booking-summary text-center"><h3>@Model.Cancelled</h3><p class="room-meta mb-0">Cancelled</p></div></div>
+        <div class="col-6 col-lg-3"><div class="booking-summary text-center"><h3>₹@Model.Revenue.ToString("N0")</h3><p class="room-meta mb-0">Confirmed + completed revenue</p></div></div>
+    </div>
+    <div class="d-flex gap-2 mt-4"><a class="btn btn-brand" asp-controller="AdminRooms" asp-action="Index">Manage rooms</a><a class="btn btn-outline-brand" asp-controller="AdminBookings" asp-action="Index">Manage bookings</a></div>
+</section>

@@ -1,0 +1,20 @@
+NO SCREENSHOTS ARE INCLUDED YET. They must be taken from your running site (they cannot be faked).
+Delete this file after adding your images.
+
+Run the app (F5 in Visual Studio) with the database set up, then capture:
+
+Desktop (browser window ~1280 px wide), numbered PNG files:
+  01-home.png                 /
+  02-rooms.png                /Rooms
+  03-room-details.png         /Rooms/Details/1
+  04-booking-form.png         /Bookings/Create?roomId=1
+  05-booking-confirmation.png (after submitting a booking)
+  06-my-bookings.png          /Bookings/MyBookings  (enter the email + phone you booked with)
+  07-admin-login.png          /Account/Login
+  08-admin-dashboard.png      /Admin
+  09-manage-rooms.png         /Admin/Rooms   (also add-room form: 10-add-room.png)
+  11-manage-bookings.png      /Admin/Bookings
+
+Mobile: press F12, then Ctrl+Shift+M, choose "iPhone 12 Pro" (390 px). Save as
+mobile-01-home.png, mobile-02-rooms.png, mobile-04-booking-form.png, mobile-07-admin-login.png ...
+Tip: Windows key + Shift + S takes a screenshot of part of the screen.

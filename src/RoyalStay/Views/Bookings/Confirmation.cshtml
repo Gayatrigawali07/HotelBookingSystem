@@ -1,0 +1,15 @@
+@model Booking
+@{ ViewData["Title"] = "Booking Confirmation"; }
+<section class="page-banner"><div class="container"><span class="eyebrow">THANK YOU</span><h1>Booking received</h1><p>Your booking was saved. Please keep your booking ID.</p></div></section>
+<section class="container section-space"><div class="row justify-content-center"><div class="col-lg-7"><div class="form-card">
+    <div class="alert alert-success">Booking <strong>#@Model.BookingId.ToString("0000")</strong> saved. Status: <strong>@Model.Status</strong> (the hotel will confirm it).</div>
+    <div class="summary-line"><span>Guest</span><strong>@Model.GuestName</strong></div>
+    <div class="summary-line"><span>Email</span><strong>@Model.GuestEmail</strong></div>
+    <div class="summary-line"><span>Room</span><strong>@Model.RoomType (Room @Model.RoomNumber)</strong></div>
+    <div class="summary-line"><span>Check-in</span><strong>@Model.CheckIn.ToString("dd MMM yyyy")</strong></div>
+    <div class="summary-line"><span>Check-out</span><strong>@Model.CheckOut.ToString("dd MMM yyyy")</strong></div>
+    <div class="summary-line"><span>Nights</span><strong>@Model.Nights</strong></div>
+    <div class="summary-line"><span>Guests</span><strong>@Model.Guests</strong></div>
+    <div class="summary-line total-line"><span>Total</span><strong>₹@Model.TotalAmount.ToString("N0")</strong></div>
+    <div class="d-flex gap-2 mt-4 flex-wrap"><a class="btn btn-brand" asp-action="MyBookings" asp-route-email="@Model.GuestEmail">My bookings</a><a class="btn btn-outline-brand" asp-controller="Home" asp-action="Index">Back to home</a></div>
+</div></div></div></section>
